@@ -20,8 +20,13 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tvMain.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_detailFragment)
+        btnSend.setOnClickListener {
+            val bundle = Bundle().apply {
+                putString(getString(R.string.lastName), etLastName.text.toString())
+            }
+
+            Navigation.findNavController(it)
+                .navigate(R.id.action_mainFragment_to_detailFragment, bundle)
         }
     }
 }
