@@ -21,12 +21,10 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnSend.setOnClickListener {
-            val bundle = Bundle().apply {
-                putString(getString(R.string.lastName), etLastName.text.toString())
-            }
+            val directions = MainFragmentDirections
+                .actionMainFragmentToDetailFragment(etLastName.text.toString())
 
-            Navigation.findNavController(it)
-                .navigate(R.id.action_mainFragment_to_detailFragment, bundle)
+            Navigation.findNavController(it).navigate(directions)
         }
     }
 }
