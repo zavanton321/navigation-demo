@@ -29,5 +29,13 @@
             android:defaultValue="Johnson"
             app:argType="string"
             />
+        <action
+            android:id="@+id/action_detailFragment_to_gameGraph"
+            app:destination="@+id/game_nav_graph"
+            />
     </fragment>
+
+    <!--  Graph from the game module  -->
+    <include app:graph="@navigation/game_graph" />
+
 </navigation>
