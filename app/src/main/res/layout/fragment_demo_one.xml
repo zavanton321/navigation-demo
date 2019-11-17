@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
+    tools:context=".DemoFragmentOne"
     >
 
-    <EditText
-        android:id="@+id/etLastName"
-        android:layout_width="300dp"
+    <TextView
+        android:id="@+id/tvDemoOne"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="42dp"
+        android:text="Demo One"
         />
 
     <Button
-        android:id="@+id/btnSend"
+        android:id="@+id/btnToDemoTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
+        android:layout_gravity="center"
+        android:text="To Demo Two"
         />
 
-    <Button
-        android:id="@+id/btnNestedGraph"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To Nested Graph"
-        />
 
-</LinearLayout>
+</FrameLayout>

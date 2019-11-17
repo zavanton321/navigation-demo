@@ -17,7 +17,12 @@
             android:id="@+id/action_mainFragment_to_detailFragment"
             app:destination="@id/detailFragment"
             />
+        <action
+            android:id="@+id/action_mainFragment_to_nestedGraph"
+            app:destination="@id/nested_graph"
+            />
     </fragment>
+
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.demonav.DetailFragment"
@@ -35,7 +40,41 @@
             />
     </fragment>
 
-    <!--  Graph from the game module  -->
+    <!--    Graph from the game module (can be in a separate module) -->
     <include app:graph="@navigation/game_graph" />
+
+    <!--    Nested graph example (must be in the same module) -->
+    <navigation
+        android:id="@+id/nested_graph"
+        app:startDestination="@id/demoFragmentOne"
+        >
+
+        <fragment
+            android:id="@+id/demoFragmentOne"
+            android:name="com.example.demonav.DemoFragmentOne"
+            android:label="fragment_demo_one"
+            tools:layout="@layout/fragment_demo_one"
+            >
+            <action
+                android:id="@+id/action_demoFragmentOne_to_demoFragmentTwo"
+                app:destination="@id/demoFragmentTwo"
+                />
+        </fragment>
+
+        <fragment
+            android:id="@+id/demoFragmentTwo"
+            android:name="com.example.demonav.DemoFragmentTwo"
+            android:label="fragment_demo_two"
+            tools:layout="@layout/fragment_demo_two"
+            >
+
+            <action
+                android:id="@+id/action_demoFragmentTwo_to_main_graph"
+                app:popUpTo="@id/nested_graph"
+                />
+
+        </fragment>
+
+    </navigation>
 
 </navigation>
