@@ -7,6 +7,12 @@
     app:startDestination="@id/gameFragment"
     >
 
+    <!-- Global action to navigate back to the app module graph -->
+    <action
+        android:id="@+id/action_to_out_of_game"
+        app:popUpTo="@id/game_nav_graph"
+        />
+
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.example.game.GameFragment"
@@ -22,32 +28,18 @@
             app:destination="@id/loseFragment"
             />
     </fragment>
+
     <fragment
         android:id="@+id/winFragment"
         android:name="com.example.game.WinFragment"
         android:label="fragment_win"
         tools:layout="@layout/fragment_win"
-        >
+        />
 
-        <!-- Navigate back to the app module graph -->
-        <action
-            android:id="@+id/action_winFragment_to_out_of_game"
-            app:popUpTo="@id/game_nav_graph"
-            />
-
-    </fragment>
     <fragment
         android:id="@+id/loseFragment"
         android:name="com.example.game.LoseFragment"
         android:label="fragment_lose"
         tools:layout="@layout/fragment_lose"
-        >
-
-        <!-- Navigate back to the app module graph -->
-        <action
-            android:id="@+id/action_loseFragment_to_out_of_game"
-            app:popUpTo="@id/game_nav_graph"
-            />
-
-    </fragment>
+        />
 </navigation>

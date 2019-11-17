@@ -21,7 +21,7 @@ class WinFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnFinishGame.setOnClickListener {
-            findNavController().navigate(R.id.action_winFragment_to_out_of_game)
+            findNavController().navigate(R.id.action_to_out_of_game)
         }
     }
 }
