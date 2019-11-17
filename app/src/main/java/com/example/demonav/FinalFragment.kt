@@ -6,28 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.navArgs
-import kotlinx.android.synthetic.main.fragment_detail.*
+import kotlinx.android.synthetic.main.fragment_final.*
 
-class DetailFragment : Fragment() {
-
-    private val args: DetailFragmentArgs by navArgs()
+class FinalFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_detail, container, false)
+        return inflater.inflate(R.layout.fragment_final, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tvDetail.text = args.lastName
-
-        btnFinal.setOnClickListener(
+        btnReturnToExisting.setOnClickListener(
             Navigation
-                .createNavigateOnClickListener(R.id.action_detailFragment_to_finalFragment)
+                .createNavigateOnClickListener(R.id.action_return_to_existing_mainFragment)
+        )
+
+        btnReturnToNew.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_return_and_create_new_mainFragment)
         )
     }
 }

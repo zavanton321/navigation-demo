@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailFragment"
+    tools:context=".FinalFragment"
     >
 
-    <TextView
-        android:id="@+id/tvDetail"
+    <Button
+        android:id="@+id/btnReturnToExisting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="36dp"
-        android:text="Detail fragment"
+        android:text="Return to existing"
+        android:layout_marginBottom="72dp"
         />
 
     <Button
-        android:id="@+id/btnFinal"
+        android:id="@+id/btnReturnToNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Go to final"
+        android:text="Return to new"
         />
 
 </FrameLayout>

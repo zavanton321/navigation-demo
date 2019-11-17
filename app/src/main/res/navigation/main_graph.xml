@@ -18,6 +18,7 @@
             app:destination="@id/detailFragment"
             />
     </fragment>
+
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.demonav.DetailFragment"
@@ -29,5 +30,40 @@
             android:defaultValue="Johnson"
             app:argType="string"
             />
+        <action
+            android:id="@+id/action_detailFragment_to_finalFragment"
+            app:destination="@id/finalFragment"
+            />
     </fragment>
+
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.example.demonav.FinalFragment"
+        android:label="fragment_final"
+        tools:layout="@layout/fragment_final"
+        >
+
+        <!--    if popUpToInclusive is false then navigate back to detailFragment    -->
+        <!--    if popUpToInclusive is true then navigate back to existing mainFragment    -->
+        <action
+            android:id="@+id/action_return_to_existing_mainFragment"
+            app:popUpTo="@id/detailFragment"
+            app:popUpToInclusive="true"
+            />
+
+        <!--    if popUpToInclusive is false then
+        existing mainFragment will NOT be destroyed
+        and new mainFragment will also be created    -->
+
+        <!--    if popUpToInclusive is true then
+        existing mainFragment will be destroyed
+        and new mainFragment will also be created    -->
+        <action
+            android:id="@+id/action_return_and_create_new_mainFragment"
+            app:destination="@+id/mainFragment"
+            app:popUpTo="@id/detailFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
 </navigation>
