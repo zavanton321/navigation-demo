@@ -18,16 +18,24 @@
             app:destination="@id/detailFragment"
             />
     </fragment>
+
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.demonav.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail"
+        />
+
+    <fragment
+        android:id="@+id/explicitDemoFragment"
+        android:name="com.example.demonav.ExplicitDemoFragment"
+        android:label="fragment_explicit_demo"
+        tools:layout="@layout/fragment_explicit_demo"
         >
         <argument
-            android:name="@string/lastName"
-            android:defaultValue="Johnson"
+            android:name="username"
             app:argType="string"
             />
     </fragment>
+
 </navigation>
