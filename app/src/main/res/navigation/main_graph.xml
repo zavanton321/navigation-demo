@@ -14,20 +14,28 @@
         tools:layout="@layout/fragment_main"
         >
         <action
-            android:id="@+id/action_mainFragment_to_detailFragment"
-            app:destination="@id/detailFragment"
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
             />
     </fragment>
+
     <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.demonav.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail"
+        android:id="@+id/profileFragment"
+        android:name="com.example.demonav.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile"
         >
-        <argument
-            android:name="@string/lastName"
-            android:defaultValue="Johnson"
-            app:argType="string"
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
             />
     </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.demonav.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login"
+        />
+
 </navigation>
