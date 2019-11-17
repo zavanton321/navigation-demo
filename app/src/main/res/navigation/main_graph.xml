@@ -17,6 +17,10 @@
             android:id="@+id/action_mainFragment_to_detailFragment"
             app:destination="@id/detailFragment"
             />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="http://zavanton.ru/main"
+            />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
