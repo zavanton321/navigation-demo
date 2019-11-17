@@ -21,13 +21,25 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnWin.setOnClickListener {
-            findNavController().navigate(R.id.action_gameFragment_to_winFragment)
-        }
+        navigateToWin()
+        navigateToLose()
+    }
 
-        btnLose.setOnClickListener {
-            findNavController().navigate(R.id.action_gameFragment_to_loseFragment)
+    private fun navigateToWin() {
+        btnWin.setOnClickListener {
+            findNavController().navigate(
+                GameFragmentDirections
+                    .actionGameFragmentToWinFragment()
+            )
         }
     }
 
+    private fun navigateToLose() {
+        btnLose.setOnClickListener {
+            findNavController().navigate(
+                GameFragmentDirections
+                    .actionGameFragmentToLoseFragment()
+            )
+        }
+    }
 }

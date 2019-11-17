@@ -25,8 +25,24 @@ class DetailFragment : Fragment() {
 
         tvDetail.text = args.lastName
 
+        // navigate using generated class (by safe args gradle plugin)
         btnPlayGame.setOnClickListener {
-            Navigation.findNavController(tvDetail).navigate(R.id.action_detailFragment_to_gameGraph)
+            Navigation.findNavController(tvDetail).navigate(
+                DetailFragmentDirections
+                    .actionDetailFragmentToGameGraph()
+            )
         }
+
+//        // convenience method for a button
+//        btnPlayGame.setOnClickListener(
+//            Navigation
+//                .createNavigateOnClickListener(R.id.action_detailFragment_to_gameGraph)
+//        )
+
+//        // navigate using id
+//        btnPlayGame.setOnClickListener {
+//            Navigation.findNavController(tvDetail)
+//                .navigate(R.id.action_detailFragment_to_gameGraph)
+//        }
     }
 }

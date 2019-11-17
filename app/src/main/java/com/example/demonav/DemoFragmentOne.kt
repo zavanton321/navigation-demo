@@ -21,7 +21,10 @@ class DemoFragmentOne : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnToDemoTwo.setOnClickListener {
-            findNavController().navigate(R.id.action_demoFragmentOne_to_demoFragmentTwo)
+            findNavController().navigate(
+                DemoFragmentOneDirections
+                    .actionDemoFragmentOneToDemoFragmentTwo()
+            )
         }
     }
 }

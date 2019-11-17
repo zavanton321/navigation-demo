@@ -21,16 +21,26 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sendLastName()
+
+        navigateToNested()
+    }
+
+    private fun navigateToNested() {
+        btnNestedGraph.setOnClickListener {
+            findNavController().navigate(
+                MainFragmentDirections
+                    .actionMainFragmentToNestedGraph()
+            )
+        }
+    }
+
+    private fun sendLastName() {
         btnSend.setOnClickListener {
             val directions = MainFragmentDirections
                 .actionMainFragmentToDetailFragment(etLastName.text.toString())
 
             Navigation.findNavController(it).navigate(directions)
         }
-
-        btnNestedGraph.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_nestedGraph)
-        }
-
     }
 }
